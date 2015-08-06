@@ -3,7 +3,8 @@
   <%= f.submit "Update" %>
   <%= best_in_place ticket, :uw_name %> |
   <%= best_in_place ticket, :loan_number %> |
-  <%= best_in_place ticket, :second_signature, as: :checkbox, collection: {false: "2nd Signature: NO", true: "2nd Signature: YES"} %>
+  <%= best_in_place ticket, :second_signature, as: :checkbox, collection: {false: "2nd Signature: NO", true: "2nd Signature: YES"} %> |
+  <%= ticket.created_at.strftime("Submitted on %m/%d/%y at %I:%M%p") %>
   <%= link_to "Delete", ticket,
                         data: {confirm: "Are you sure?", method: :delete},
                         remote: true %>
